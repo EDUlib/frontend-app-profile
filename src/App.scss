@@ -29,3 +29,68 @@ $fa-font-path: "~font-awesome/fonts";
     width: 12rem;
   }
 }
+
+.editable-content {
+  position: relative;
+  .edit-panel {
+    border-radius: .25rem;
+    border: solid 1px rgba(0,0,0,.1);
+    position: absolute;
+    z-index: 100;
+    top: 0-1 * $spacer;
+    left: 0;
+    right: 0;
+    background: $white;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.2);
+    padding: $spacer;
+  }
+}
+
+.edit-panel {
+  .edit-panel-enter & {
+    opacity: 0;
+    // transform: scale(.95);
+    transform-origin: top center;
+    transition: opacity .2s linear, transform .2s ease-out;
+  }
+  .edit-panel-enter-active & {
+    opacity: 1;
+    // transform: scale(1);
+  }
+  .edit-panel-exit & {
+    opacity: 1;
+    // transform: scale(1);
+    transform-origin: top center;
+    transition: opacity .2s linear, transform .2s ease-in;
+  }
+  .edit-panel-exit-active & {
+    opacity: 0;
+    // transform: scale(.95);
+  }
+}
+
+.edit-panel-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: rgba(255,255,255,.85);
+  
+  .edit-panel-enter & {
+    background: rgba(255,255,255, 0);
+    transition: background .2s linear;
+  }
+  .edit-panel-enter-active & {
+    background: rgba(255,255,255,.85);
+    opacity: 1;
+  }
+  .edit-panel-exit & {
+    background: rgba(255,255,255,.85);
+    transition: background .2s linear;
+  }
+  .edit-panel-exit-active  & {
+    background: rgba(255,255,255, 0);
+  }
+}

@@ -133,6 +133,7 @@ class UserAccount extends React.Component {
                 fieldName="about"
                 isEditing={this.state.currentlyEditingField === 'about'}
                 disabled={false}
+                cancel={this.resetEditing}
                 renderStatic={props => ( // eslint-disable-line no-unused-vars
                   <React.Fragment>
                     <h3>About {firstName}</h3>
@@ -166,7 +167,7 @@ class UserAccount extends React.Component {
                         </Input>
                       </Col>
                       <Col className="col-auto mt-3 mb-3">
-                        <Button color="link" onClick={this.resetEditing}>Discard Changes</Button>
+                        <Button color="link" onClick={props.cancel}>Discard Changes</Button>
                         <Button className="ml-2" color="primary">Save Changes</Button>
                       </Col>
                     </Row>
