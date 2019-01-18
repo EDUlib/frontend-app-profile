@@ -5,3 +5,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
 @import "~@edx/frontend-component-footer/src/lib/scss/site-footer";
+
+.word-break-all {
+  word-break: break-all !important;
+}
